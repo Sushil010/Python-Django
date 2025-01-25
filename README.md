@@ -18,5 +18,5 @@ and start creating projects
 </p>
 
 <p>after moving into subfolder use command
-python "filename" runserver (port-name:optional(8001,8000...))
+<h2>python "filename" runserver (port-name:optional(8001,8000...))</h2>
 </p>
