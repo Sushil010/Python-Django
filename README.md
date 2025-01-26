@@ -20,3 +20,4 @@ and start creating projects
 <p>after moving into subfolder use command
 <h3>python "filename" runserver (port-name:optional(8001,8000...))</h3>
 </p>
+![alt text](image.png)
