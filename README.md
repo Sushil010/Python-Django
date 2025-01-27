@@ -40,4 +40,11 @@ and start creating projects
 
 <!-- step 3. as seen in the diagram: make the views(html file inside of project1 render by using request and render) -->
 <!-- now the urls has to be passed to the application form main project one  -->
-<!-- for this create urls.py within the application as it won't exist -->
+<!-- for this create urls.py within the application as it won't exist 
+after this creation copy the content of urls.py from root level and paste it on the application folder
+-->
+<!-- Important thing to do now is to give access to that url.py file of the app that we have create for this use or
+import include and use this syntax
+ -->
+ <h2>Giving access to the apps urls</h2>
+ <h3>path('blog/', include('blog.urls'))</h3>
