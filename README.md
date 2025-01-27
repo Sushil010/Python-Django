@@ -51,4 +51,7 @@ import include and use this syntax
 
 
 
- <!-- Usage of common layout files that can be used with only sodme basic synatx -->
+ <!-- Usage of common layout files that can be used with only some basic synatx -->
+ <!-- A unnamed block will be used in every layout(the block will be positioned within a specified area)
+  -->
+  <!-- to use this we have to use the exyend property in any other files -->

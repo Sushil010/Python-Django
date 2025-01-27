@@ -1,17 +1,11 @@
-{%load static%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>About Section</title>
-</head>
-<body>
-    
+{% extends "layout.html" %}
 
-    <h1>Welcome to About Page </h1>
-    <p> This is the about page of the website. </p>
+{% block title %}
+About Section
+{% endblock %}
 
-</body>
-</html>
+
+{% block content %}
+
+<h1>This is the content form About section</h1>
+{% endblock %}
