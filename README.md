@@ -29,5 +29,10 @@ and start creating projects
 <!-- urls locator or url.py and settings.py won't be in these applications -->
 <h3>python manage.py startapp "app-name"</h3>
 
-<!-- first step after creating an app -->
+<!--1.  first step after creating an app -->
 <!-- make the main project aware that a new app has been created through settings.py in main project folder -->
+<!-- For this go to settings.py inside of main project folder and write the name of app that is created such as "project1" in this case under installed apps lists -->
+
+<!--2. Second step is to make the templates appear in the application create  -->
+<!-- things to consider: we had already made a template under the main project but considering each application is a unique app we can meke a different template in each of the app -->
+<!--  -->
