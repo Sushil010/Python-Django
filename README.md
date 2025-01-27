@@ -12,6 +12,7 @@
 
 
 <h2>project start</h2>
+<!-- A project will be created only once but apps will be multiple inside the project -->
 <h3>django-admin startproject "foldername or projectname"</h3>
 <p>a subfolder with the same project or foldername will be created change directory into that folder
 and start creating projects
@@ -21,3 +22,7 @@ and start creating projects
 <h3>python "filename" runserver (port-name:optional(8001,8000...))</h3>
 </p>
 ![alt text](image.png)
+
+
+<h2>Create application:</h2>
+<h3>python manage.py startapp "app-name"</h3>
