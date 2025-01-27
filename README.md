@@ -25,4 +25,9 @@ and start creating projects
 
 
 <h2>Create application:</h2>
+<!-- this below command will only create a file inside of project folder(whcih was initailized at start) -->
+<!-- urls locator or url.py and settings.py won't be in these applications -->
 <h3>python manage.py startapp "app-name"</h3>
+
+<!-- first step after creating an app -->
+<!-- make the main project aware that a new app has been created through settings.py in main project folder -->
