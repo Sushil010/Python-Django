@@ -48,3 +48,7 @@ import include and use this syntax
  -->
  <h2>Giving access to the apps urls</h2>
  <h3>path('blog/', include('blog.urls'))</h3>
+
+
+
+ <!-- Usage of common layout files that can be used with only sodme basic synatx -->
