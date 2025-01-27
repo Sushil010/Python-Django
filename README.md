@@ -35,4 +35,9 @@ and start creating projects
 
 <!--2. Second step is to make the templates appear in the application create  -->
 <!-- things to consider: we had already made a template under the main project but considering each application is a unique app we can meke a different template in each of the app -->
-<!--  -->
+<!--create a template folder under application and under that same app name and under that all templates will be created  -->
+
+
+<!-- step 3. as seen in the diagram: make the views(html file inside of project1 render by using request and render) -->
+<!-- now the urls has to be passed to the application form main project one  -->
+<!-- for this create urls.py within the application as it won't exist -->
