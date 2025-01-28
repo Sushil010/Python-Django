@@ -59,4 +59,5 @@ import include and use this syntax
   <!-- the compiler will check first inside of the folder for layout file and if not it will check under the  root directory. -->
 
   <!-- For tailwind start -->
+  <!-- create venv or inside of venv that was created -->
   <!-- python manage.py tailwind start -->
