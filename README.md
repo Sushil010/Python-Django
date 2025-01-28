@@ -58,4 +58,5 @@ import include and use this syntax
   <!-- In order to use templates place of other app we can use the same extend property -->
   <!-- the compiler will check first inside of the folder for layout file and if not it will check under the  root directory. -->
 
-  
+  <!-- For tailwind start -->
+  <!-- python manage.py tailwind start -->
