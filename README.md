@@ -61,3 +61,11 @@ import include and use this syntax
   <!-- For tailwind start -->
   <!-- create venv or inside of venv that was created -->
   <!-- python manage.py tailwind start -->
+
+
+
+
+  <!-- Working with models: -->
+  <!-- first define models within each application it may consist of media like images -->
+  <!-- For media access settings has to be updated -->
+  <!-- update the url as accordingly the settings update -->
