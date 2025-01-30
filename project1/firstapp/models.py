@@ -13,6 +13,7 @@ class Aeroplane(models.Model):
     image=models.ImageField(upload_to='pros/')
     added_time=models.DateTimeField(default=timezone.now)
     choices=models.CharField(max_length=2,choices=SEAT_TYPE)
+    description=models.TextField(default='')
 
     
     def __str__(self):

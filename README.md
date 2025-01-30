@@ -58,9 +58,9 @@ import include and use this syntax
   <!-- In order to use templates place of other app we can use the same extend property -->
   <!-- the compiler will check first inside of the folder for layout file and if not it will check under the  root directory. -->
 
-  <!-- For tailwind start -->
+  <h2>For tailwind start</h2> 
   <!-- create venv or inside of venv that was created -->
-  <!-- python manage.py tailwind start -->
+   <h3>python manage.py tailwind start</h3>
 
 
 
@@ -101,3 +101,8 @@ import include and use this syntax
 
 <!-- use above to change at the formtend folder or html template at the beginning -->
 <!-- Just be careful with the template that was created top match the structure. -->
+<!-- 38 -->
+
+<h2>Any change in model we have to use below syntax or simply make migration</h2>
+<h3> python manage.py makemigrations "app_folder(firstapp)"</h3>
+<h3>python manage.py migrate</h3>
