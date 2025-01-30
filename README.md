@@ -121,3 +121,6 @@ in this case the name used along with url can be used again.
 
  <h2>Defining URL</h2>
  <h3>{% url 'aero_desc' ap.id %}</h3>
+
+ <!-- Always use the variable of the page you want to make update on -->
+ <!-- You won't see update on one page by using update of another page -->
