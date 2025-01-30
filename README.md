@@ -106,3 +106,8 @@ import include and use this syntax
 <h2>Any change in model we have to use below syntax or simply make migration</h2>
 <h3> python manage.py makemigrations "app_folder(firstapp)"</h3>
 <h3>python manage.py migrate</h3>
+
+<!-- Basically in view you have to put those things that you have to show -->
+<!-- create a view or functions -->
+<!-- view will ask for a page to display and create a html file -->
+<!-- at last you need url for redirection to shoe the route -->
