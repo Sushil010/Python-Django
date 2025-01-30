@@ -7,5 +7,16 @@ First APP
 
 {% block content %}
 
-<h1 class='bg-slate-500 text-3xl'>This is from the creation of first app</h1>
+<h2 class='bg-slate-500 text-2xl'>This is from the creation of first app</h2>
+{% for ap in aeroplane %}
+
+<div class="aeroplane-items">
+
+    <img src="{{ap.image.url}}" alt="" srcset="">
+
+</div>
+
+{% endfor %}
+
+
 {% endblock %}

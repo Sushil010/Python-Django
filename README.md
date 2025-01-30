@@ -49,7 +49,7 @@ import include and use this syntax
  <h2>Giving access to the apps urls</h2>
  <h3>path('blog/', include('blog.urls'))</h3>
 
-
+<h2>Check url.py to find which pages present and which page are made homepage</h2>
 
  <!-- Usage of common layout files that can be used with only some basic synatx -->
  <!-- A unnamed block will be used in every layout(the block will be positioned within a specified area)
@@ -85,6 +85,15 @@ import include and use this syntax
    <!-- 
    
    first step is to import the model made.
-   second step is ti add the method made inside of model into the admin.
+   second step is to add the method made inside of model into the admin.
    
    -->
+
+
+
+
+
+<h2> Showing data from databse to frontend</h2>
+<!-- first take all the object values from database and store in  a variale -->
+<h3>mn=methodname.object.all()</h3>
+<h3>{mn:"mn"}</h3>
