@@ -111,3 +111,13 @@ import include and use this syntax
 <!-- create a view or functions -->
 <!-- view will ask for a page to display and create a html file -->
 <!-- at last you need url for redirection to shoe the route -->
+
+<!-- For relocation or redirect into another page we have used variable ({%....%}) inside of anchor tag
+
+the anchor tag consists of url so that redirection can be provided.
+
+in this case the name used along with url can be used again.
+ -->
+
+ <h2>Defining URL</h2>
+ <h3>{% url 'aero_desc' ap.id %}</h3>

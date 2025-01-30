@@ -16,7 +16,7 @@ First APP
 
         <img class='rounded-sm shadow-2xl' src="{{ap.image.url}}" alt="" srcset="">
         <h3 class='flex justify-center items-center mt-5 text-2xl font-bold'> {{ap.name}}</h3>
-        <a href="#">
+        <a href="{% url 'aero_desc' ap.id %}">
             <button class='bg-green-700 mt-5 w-[100%] hover:bg-green-500 text-white p-2 rounded-md'>
                 {{ap.id}}-{{ap.choices}}
             </button>
