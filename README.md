@@ -96,4 +96,8 @@ import include and use this syntax
 <h2> Showing data from databse to frontend</h2>
 <!-- first take all the object values from database and store in  a variale -->
 <h3>mn=methodname.object.all()</h3>
+<!-- at last at the render portion -->
 <h3>{mn:"mn"}</h3>
+
+<!-- use above to change at the formtend folder or html template at the beginning -->
+<!-- Just be careful with the template that was created top match the structure. -->
