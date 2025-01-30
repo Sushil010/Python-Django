@@ -78,3 +78,13 @@ import include and use this syntax
    -->
 
    <!-- do migrate the manage.py file after this -->
+
+
+
+   <!-- Through admin.py we can attach any model to it and can see it in admin panel -->
+   <!-- 
+   
+   first step is to import the model made.
+   second step is ti add the method made inside of model into the admin.
+   
+   -->
