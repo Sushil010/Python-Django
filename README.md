@@ -69,3 +69,12 @@ import include and use this syntax
   <!-- first define models within each application it may consist of media like images -->
   <!-- For media access settings has to be updated -->
   <!-- update the url as accordingly the settings update -->
+
+
+  <!-- Before making or running app we need to migrate the particular app using -->
+  <!-- python manage.py makemigrations firstapp -->
+  <!-- this will generate a migration file such that all the commands witten in models will create a 
+  sql format within the init python file of the migrations folder.
+   -->
+
+   <!-- do migrate the manage.py file after this -->
