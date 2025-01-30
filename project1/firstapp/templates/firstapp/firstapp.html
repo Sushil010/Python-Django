@@ -9,15 +9,23 @@ First APP
 
 <h2 class='bg-slate-500 text-2xl'>This is from the creation of first app</h2>
 
+<div class='grid grid-cols-3 gap-4 m-4'>
 {% for ap in aeroplane %}
 
-<div class="aeroplane-items">
+    <div class='aeroplane-items bg-blue-700 p-5'>
 
-    <img src="{{ap.image.url}}" alt="" srcset="">
+        <img class='rounded-sm shadow-2xl' src="{{ap.image.url}}" alt="" srcset="">
+        <h3 class='flex justify-center items-center mt-5 text-2xl font-bold'> {{ap.name}}</h3>
+        <a href="#">
+            <button class='bg-green-700 mt-5 w-[100%] hover:bg-green-500 text-white p-2 rounded-md'>
+                {{ap.id}}-{{ap.choices}}
+            </button>
+        </a>
 
-</div>
+    </div>
+
 
 {% endfor %}
-
+</div>
 
 {% endblock %}
