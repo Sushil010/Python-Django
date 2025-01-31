@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Aeroplane(models.Model):
@@ -18,3 +19,9 @@ class Aeroplane(models.Model):
     
     def __str__(self):
         return self.name
+
+
+# defining relationships:
+class Aero_review(models.Model):
+    aero=models.ForeignKey(Aeroplane,on_delete=models.CASCADE)
+    
