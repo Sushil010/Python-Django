@@ -59,4 +59,6 @@ class Blackbox(models.Model):
     damage_date=models.DateTimeField()
 
     def __str__(self):
-        return self.name.blackbox
+        return self.blackbox.name
+    # the name will be the name of aeroplane which is making one to one refernce with
+    # Aeroplane class, it will be derived from that class.

@@ -124,3 +124,9 @@ in this case the name used along with url can be used again.
 
  <!-- Always use the variable of the page you want to make update on -->
  <!-- You won't see update on one page by using update of another page -->
+
+
+
+ <!-- The model in Review is actually what we wat to be displayed in each of the models of admin
+ for example the fields that were used is ppearing in each off the models in admin panel.
+  -->
