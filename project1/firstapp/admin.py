@@ -15,7 +15,7 @@ class AeroplaneAdmin(admin.ModelAdmin):
 
 
 class PilotsAdmin(admin.ModelAdmin):
-    list_display=('name','location')
+    list_display=('name','address')
     filter_horizontal=('aeroplanes',)
 
 class BlackboxAdmin(admin.ModelAdmin):
