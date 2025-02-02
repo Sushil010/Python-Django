@@ -136,3 +136,10 @@ in this case the name used along with url can be used again.
   <!-- From creation and management -->
 
   <!-- ModelFormField can query inside an existing form in our case dropdowns from aero_varieties -->
+
+  <!-- CAses within form
+  Only to submit and only to show
+
+   Usually first if the form is being submit;
+   If the user is giving post request to server it means that form is being submit
+   -->

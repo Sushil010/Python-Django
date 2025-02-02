@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Aeroplane
 from django.shortcuts import get_object_or_404
+from .forms import AeroVarietyForm
 
 # Create your views here.
 
@@ -14,4 +15,8 @@ def aero_desc(request,aero_id):
     
 
 def aer_variety(request):
-    return render(request,'firstapp/aer_variety.html')
+    stores=None
+    if request.method=='POST':
+        form=AeroVarietyForm(request.POST)
+
+    return render(request,'firstapp/aer_variety.html',{'stores':stores})
