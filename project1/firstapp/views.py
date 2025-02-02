@@ -18,5 +18,7 @@ def aer_variety(request):
     stores=None
     if request.method=='POST':
         form=AeroVarietyForm(request.POST)
+        if form.is_valid():
+            aero_variety = form.cleaned_data['aero_variety']
 
     return render(request,'firstapp/aer_variety.html',{'stores':stores})
