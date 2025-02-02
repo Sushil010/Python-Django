@@ -13,5 +13,5 @@ def aero_desc(request,aero_id):
     return render(request,'firstapp/aero_desc.html',{'aero_det':aero_det})
     
 
-def pil_info(request):
-    return render(request,'firstapp/pil_info.html')
+def aer_variety(request):
+    return render(request,'firstapp/aer_variety.html')
