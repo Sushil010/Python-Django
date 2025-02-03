@@ -9,4 +9,19 @@ Forms Settings
 {% block content %}
 
 Test information for forms retreival.
+
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        {% comment %} provides in paragraph format(just for readibility) {% endcomment %}
+        <button class='border border-yellow-400 mt-20' type="submit"> Search Pilots </button>
+    </form>
+
+    {% if pilots%}
+        {% for pilot in pilots  %}
+            <h2>{{pilot.name}}</h2>
+        {% endfor %}
+    {% endif %}
+
+
 {% endblock %}

@@ -24,6 +24,6 @@ def aer_variety(request):
         
         # Prob Statement: only give those pilots from pilots data who are riding those aeroplanes, so choose 
         # that Pilots class
-    else:
+    else: 
         form=AeroVarietyForm()
     return render(request,'firstapp/aer_variety.html',{'pilots':pilots , 'form':form})
