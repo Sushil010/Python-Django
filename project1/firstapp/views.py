@@ -15,13 +15,15 @@ def aero_desc(request,aero_id):
     
 
 def aer_variety(request):
-    stores=None
+    pilots=None
     if request.method=='POST':
         form=AeroVarietyForm(request.POST)
         if form.is_valid():
             aero_variety = form.cleaned_data['aero_variety']
+            pilots=Pilots.objects.filter(aeroplanes=aero_variety)
         
         # Prob Statement: only give those pilots from pilots data who are riding those aeroplanes, so choose 
         # that Pilots class
-
-    return render(request,'firstapp/aer_variety.html',{'stores':stores})
+    else:
+        form=AeroVarietyForm()
+    return render(request,'firstapp/aer_variety.html',{'pilots':pilots , 'form':form})
