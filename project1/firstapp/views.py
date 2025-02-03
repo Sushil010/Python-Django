@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Aeroplane
+from .models import Aeroplane,Pilots
 from django.shortcuts import get_object_or_404
 from .forms import AeroVarietyForm
 
@@ -20,5 +20,8 @@ def aer_variety(request):
         form=AeroVarietyForm(request.POST)
         if form.is_valid():
             aero_variety = form.cleaned_data['aero_variety']
+        
+        # Prob Statement: only give those pilots from pilots data who are riding those aeroplanes, so choose 
+        # that Pilots class
 
     return render(request,'firstapp/aer_variety.html',{'stores':stores})
