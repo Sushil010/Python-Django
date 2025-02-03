@@ -19,7 +19,7 @@ Test information for forms retreival.
 
     {% if pilots%}
         {% for pilot in pilots  %}
-            <h2>{{pilot.name}}</h2>
+            <h2>{{pilot.name}}-{{pilot.address}}</h2>
         {% endfor %}
     {% endif %}
 
