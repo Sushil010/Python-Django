@@ -24,3 +24,6 @@ change directory to created project and run server
 make migrations 
 <h3>python manage.py makemigrations</h3>
 <h3>python manage.py migrate</h3>
+
+create superuser
+<h3>python manage.py createsuperuser (Sushil/Sushil010)</h3>
