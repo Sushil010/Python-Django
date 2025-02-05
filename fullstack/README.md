@@ -40,3 +40,7 @@ for using media content
 <h2>for using tailwind components</h2>
 <h3>STATIC_URL = '/static/'</h3>
 <h3>STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]</h3>
+
+
+<h2>create app</h2>
+<h3>python manage.py startapp app_name</h3>
