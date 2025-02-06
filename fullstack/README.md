@@ -44,3 +44,21 @@ for using media content
 
 <h2>create app</h2>
 <h3>python manage.py startapp app_name</h3>
+
+
+<h2>create a model in app/models.py</h2>
+<h3>class ModelName(models.Model):</h3>
+if using images then install pillow
+<h3>pip install pillow</h3>
+
+make sure to migrate after creating model
+<h3>python manage.py makemigrations "app_name"</h3>
+<h3>python manage.py migrate</h3>
+
+<h2>register model in admin.py</h2>
+<h3>from .models import ModelName</h3>
+<h3>admin.site.register(ModelName)</h3>
+
+
+next create a form in app/forms.py
+<h3>from django import forms</h3>
