@@ -52,7 +52,7 @@ def tweet_edit(request,tweet_id):
             tweet = form.save(commit=False)
             tweet.user=request.user
             tweet.save()
-            return redirect('tweet_list')
+            return redirect('tweet_lists')
     else:
         # the instance in the bracket is used to show the data in the form which is to be edited
         form=TweetForm(instance=tweet)
@@ -63,5 +63,5 @@ def tweet_delete(request,tweet_id):
     tweet=get_object_or_404(Tweet,pk=tweet_id,user=request.user)
     if request.method=='POST':
         tweet.delete()
-        return redirect('tweet_list')
+        return redirect('tweet_lists')
     return render(request,'tweet_delete_confirm.html',{'tweet':tweet})

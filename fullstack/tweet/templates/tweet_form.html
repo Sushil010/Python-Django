@@ -21,7 +21,7 @@ Tweet application
         {% csrf_token %}
         {{ form.as_p }}
         <button type='submit' class='btn mt-4 btn-success'>Submit</button>
-        {% comment %} <a class='btn mt-4 ml-3 btn-success' href="{% url 'tweet_lists' %}">Back to Homepage</a> {% endcomment %}
+        <a class='btn mt-4 ml-3 btn-success' href="{% url 'tweet_lists' %}">Back to Homepage</a>
 
 
     </form>
