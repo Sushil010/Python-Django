@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Tweet application
+{% endblock %}
+
+{% block content %}
+
+<h1 class='text-center mt-4'>Welcome to Twitter Page</h1>
+
+
+
+
+    {% if form.instance.pk %}
+    Edit Tweet
+    {% else %}
+    <h4 class='mb-4'>Create Tweet</h4>
+    {% endif %}
+
+    <form method='post' enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type='submit' class='btn mt-4 btn-success'>Submit</button>
+        {% comment %} <a class='btn mt-4 ml-3 btn-success' href="{% url 'tweet_lists' %}">Back to Homepage</a> {% endcomment %}
+
+
+    </form>
+
+
+
+{% endblock %}
