@@ -7,11 +7,13 @@ Tweet list
 
 {% endblock %}
 {% block content %}
-    <a class="btn btn-primary " href="{% url 'tweet_create' %}">Create a tweet</a>
+    <a class="btn btn-secondary mt-4 mb-5 " href="{% url 'tweet_create' %}">Create tweet</a>
+    
+    <div class="container row gap-4">
     {% for tweet in tweet %}
     
 
-    <div>
+    
         
     
         <div class="card" style="width: 18rem;">
@@ -23,8 +25,9 @@ Tweet list
             <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger">Delete Tweet</a>
             </div>
         </div>
-    </div>
+    
     
     {% endfor %}
+</div>
 
 {% endblock %}
