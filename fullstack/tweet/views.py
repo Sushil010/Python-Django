@@ -13,7 +13,21 @@ def tweet_lists(request):
     tweet=Tweet.objects.all().order_by('-created_at')
     return render(request,'tweet_list.html',{'tweet':tweet})
 
-def tweet_submit(request):
+def tweet_create(request):
+    if request.method=="POST":
+        form=TweetForm(request.POST,request.FILES)
+        if form.is_valid():
+            tweet=form.save(commit=False)
+            tweet.user=request.user
+            tweet.save()
+            return redirect('tweet_list')
+    else:
+        form=TweetForm()
+    return render(request,'tweet_form.html',{'form':form})
+
+
+
+# def tweet_submit(request):
     if request.method=='POST':
         form=TweetForm(request.POST,request.FILES)
         # if file is also being accepted use request.FILES in above
