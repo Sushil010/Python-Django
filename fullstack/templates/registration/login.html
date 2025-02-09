@@ -9,4 +9,18 @@ Login Page
 
 <h2>Welcome to Login PAge!!</h2>
 
+<div>
+
+    <form action="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class='btn mt-4  btn-primary'>Login</button>
+
+        <a class='btn ml-8 mt-4  btn-success' href="{% url 'tweet_lists' %}">Back to Homepage</a>
+        <h5 class='mt-10'>Don't have an account?</h5><a class='btn ml-8 mt-4 btn-warning' href="{% url 'register' %}">Register here</a>
+
+    </form>
+
+</div>
+
 {% endblock %}

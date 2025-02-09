@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+Registration Page
+{% endblock %}
+
+{% block content %}
+
+<h2>Register Here!!</h2>
+
+<div>
+
+    <form action="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class='btn mt-4 btn-primary'>Register</button>
+
+    </form>
+ 
+</div>
+
+{% endblock %}
