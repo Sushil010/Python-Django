@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 
-# Create your views here.
+
 def index(request):
     return render(request,'index.html')
 
