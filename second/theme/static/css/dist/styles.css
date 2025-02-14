@@ -822,6 +822,10 @@ select {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
 }
 
+.text-center {
+  text-align: center;
+}
+
 .font-serif {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
@@ -833,6 +837,11 @@ select {
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .leading-normal {
