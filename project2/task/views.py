@@ -10,3 +10,4 @@ def index(request):
 def task_field(request):
     task=Task.objects.all().order_by('-created_at')
     return render(request,'task_page.html',{'task':task})
+
