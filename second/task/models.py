@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class TododItems(models.Model):
+class TodoItems(models.Model):
     title=models.CharField(max_length=100)
     completed=models.BooleanField(default=False)
 
