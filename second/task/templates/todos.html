@@ -7,6 +7,17 @@ Todo_lists
 
 {% block content %}
 
+<h1>Todo Lists</h1>
+
+
+
+{% for todos in todos %}
+    {% if todos.completed %}
+        <p>Completed</p>
+    {% else %}
+        <p>Not Completed</p>
+    {% endif %}
+{% endfor %}
 
 
 {% endblock %}
