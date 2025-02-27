@@ -11,7 +11,9 @@ Todo_lists
 
 
 
-{% for todos in todos %}
+{% for todos in items %}
+    {{ todos.title }}:
+    
     {% if todos.completed %}
         <p>Completed</p>
     {% else %}
