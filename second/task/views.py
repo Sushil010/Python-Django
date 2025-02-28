@@ -12,7 +12,7 @@ def task(request):
 
 def todos(request):
     if request.method=='POST':
-        title=request.get.POST('title')
+        title=request.POST.get('title')
         TodoItems.objects.create(title=title, completed=False)  # Save task
         return redirect("todos") # Redirect to todos page
 
