@@ -9,6 +9,13 @@ Todo_lists
 
 <h1>Todo Lists</h1>
 
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="title" placeholder="Title">
+    <input type="submit" value="Add">
+    <input type="submit" value="Delete">
+    
+</form>
 
 
 {% for todos in items %}
