@@ -18,3 +18,8 @@ def todos(request):
 
     items=TodoItems.objects.all()
     return render(request,'todos.html',{'items':items})
+
+
+
+def deletetodo(request):
+    pass
