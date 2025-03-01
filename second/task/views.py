@@ -27,7 +27,5 @@ def deletetodo(request,task_id):
     if request.method=='POST':
         task.delete()
     
-    return render(request,'todos.html',{'task':task})
-
-    pass
+    return render(request,'todos.html')
     
