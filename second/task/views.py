@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import TodoItems
 from django.shortcuts import redirect
+from django.shortcuts import get_object_or_404,redirect
 
 
 # Create your views here.
@@ -21,5 +22,12 @@ def todos(request):
 
 
 
-def deletetodo(request):
+def deletetodo(request,task_id):
+    task=get_object_or_404(TodoItems,pk=task_id,user=request.user)
+    if request.method=='POST':
+        task.delete()
+    
+    return render(request,'todos.html',{'task':task})
+
     pass
+    
