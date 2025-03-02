@@ -26,6 +26,7 @@ def deletetodo(request,todos_id):
     task=get_object_or_404(TodoItems,pk=todos_id)
     if request.method=='POST':
         task.delete()
+        return redirect('todos')
     
     return render(request,'todos.html')
     
