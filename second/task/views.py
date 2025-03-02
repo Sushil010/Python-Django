@@ -22,8 +22,8 @@ def todos(request):
 
 
 
-def deletetodo(request,task_id):
-    task=get_object_or_404(TodoItems,pk=task_id,user=request.user)
+def deletetodo(request,todos_id):
+    task=get_object_or_404(TodoItems,pk=todos_id)
     if request.method=='POST':
         task.delete()
     
