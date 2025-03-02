@@ -20,7 +20,7 @@ Todo_lists
 
 {% for todos in items %}
     {{ todos.title }}:
-    <form action="" method='post'>
+    <form action="{%url 'deletetodo' todos.id %}" method='post'>
         {% csrf_token %}
        <input type="submit" value="Delete">
     </form>
