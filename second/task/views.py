@@ -11,6 +11,7 @@ def task(request):
     return render(request,'index.html')
 
 
+
 def todos(request):
     if request.method=='POST':
         title=request.POST.get('title')
