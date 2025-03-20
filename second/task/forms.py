@@ -1,5 +1,7 @@
 from django import forms
 from .models import TodoItems
+from django.contrib.auth.models import User
+
 from django.contrib.auth.forms import UserCreationForm
 
 class TodoForm(forms.ModelForm):
@@ -11,5 +13,5 @@ class TodoForm(forms.ModelForm):
 class UserRegistrationForm(UserCreationForm):
     email=forms.EmailField()
     class Meta:
-        model=TodoItems
+        model=User
         fields=('username','email','password1','password2')
