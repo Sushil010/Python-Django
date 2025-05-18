@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def index(requets):
+def index(request):
     return HttpResponse("Hello World")
 
-# def custom_names()
+def custom_names(request,name):
+    return HttpResponse(f"Hello {name}")
