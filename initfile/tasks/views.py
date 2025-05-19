@@ -10,3 +10,6 @@ def tasks(request):
     return render(request,"folders/index.html",{
         'todos':todos
     })
+
+def add_tasks(request):
+    return render(request,"folders/add.html")
