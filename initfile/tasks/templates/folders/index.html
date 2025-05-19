@@ -3,11 +3,12 @@
 
 {% block content %}
 
-        <ul>
+    <ul>
         {% for todo in todos%}
         <li>{{todo}}</li>
         {%endfor%}
     </ul>
 
+    <a href="{% url "add_tasks" %}">Add items</a>
 
 {% endblock %}
