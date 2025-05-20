@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 
 # Create your views here.
@@ -12,4 +12,10 @@ def tasks(request):
     })
 
 def add_tasks(request):
+    # return render(request,"folders/add.html")
+    if request.method=="POST":
+        tasks=request.POST.get("task")
+        if tasks:
+            todos.append(tasks)
+        return redirect('todos')
     return render(request,"folders/add.html")
