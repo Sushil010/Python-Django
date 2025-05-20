@@ -17,5 +17,6 @@ def add_tasks(request):
         tasks=request.POST.get("task")
         if tasks:
             todos.append(tasks)
-        return redirect('todos')
+        return redirect('add_tasks')
     return render(request,"folders/add.html")
+    # return redirect('todos')
