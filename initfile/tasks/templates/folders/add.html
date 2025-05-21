@@ -6,7 +6,8 @@
 
 <form action="{% url 'add_tasks' %}" method="post">
     {% csrf_token %}
-    <input type="text" name="task">
+    {{form}}
+    {% comment %} <input type="text" name="task"> {% endcomment %}
     <input type="submit">
 </form>
 
