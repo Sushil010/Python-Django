@@ -4,6 +4,7 @@ from django import forms
 
 class NewTaskForms(forms.Form):
     text=forms.CharField(label="New Task")
+    priority=forms.IntegerField(label="Priority",max_value=10,min_value=0)
 
 # Create your views here.
 def index(request):
