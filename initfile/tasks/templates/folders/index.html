@@ -6,6 +6,8 @@
     <ul>
         {% for todo in todos%}
         <li>{{todo}}</li>
+        {%empty%}
+            <h3>No Todos</h3>
         {%endfor%}
     </ul>
 

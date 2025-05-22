@@ -5,16 +5,18 @@ from django.urls import reverse
 
 class NewTaskForms(forms.Form):
     text=forms.CharField(label="New Task")
-    priority=forms.IntegerField(label="Priority",max_value=8,min_value=0)
+    # priority=forms.IntegerField(label="Priority",max_value=8,min_value=0)
 
 # Create your views here.
 def index(request):
     return HttpResponse("Welcome to the task page")
 
-todos=['get','play','pass']
+# todos=[]
 def tasks(request):
+    if "todos" not in request.session:
+        request.session["todos"]=[]
     return render(request,"folders/index.html",{
-        'todos':todos
+        'todos':request.session["todos"]
     })
 
 def add_tasks(request):
@@ -27,7 +29,8 @@ def add_tasks(request):
             # from.cleaned_data will be used to retreive all user data 
             # Similarly form.cleaned_data["task"] will get only the task field
             task=form.cleaned_data["text"]
-            todos.append(task)
+            request.session["todos"]+=[task]
+            # todos.append(task)
             # name which we have included in the urls file
             return HttpResponseRedirect(reverse("todos"))
         else:
