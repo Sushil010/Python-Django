@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django import forms
+from django.urls import reverse
 
 class NewTaskForms(forms.Form):
     text=forms.CharField(label="New Task")
@@ -27,6 +28,8 @@ def add_tasks(request):
             # Similarly form.cleaned_data["task"] will get only the task field
             task=form.cleaned_data["text"]
             todos.append(task)
+            # name which we have included in the urls file
+            return HttpResponseRedirect(reverse("todos"))
         else:
             return render(request,"folders/add.html",{
                 "form":form
