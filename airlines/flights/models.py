@@ -18,10 +18,10 @@ class Flights(models.Model):
     def __str__(self):
         return (f"{self.id}. From {self.origin} to {self.destination } within {self.duration} minutes")
     
-
 class Passangers(models.Model):
     first=models.CharField(max_length=64)
     last=models.CharField(max_length=64)
+    flights=models.OneToOneField(Flights,blank=True,related_name="passangers")
 
     def __str__(self):
-        return f"{self.first}{self.last}"
+        return f"{self.first} {self.last}"
