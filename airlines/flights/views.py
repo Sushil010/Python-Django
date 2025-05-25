@@ -13,3 +13,7 @@ def getDetails(request,flight_id):
         "flight":flight,
         "passangers":flight.passangers.all()
     })
+
+def book_flight(request,flight_id):
+    if request.method=="POST":
+        pass
