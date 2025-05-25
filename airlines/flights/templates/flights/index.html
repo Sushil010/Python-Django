@@ -4,11 +4,11 @@
     <h3>Flight details</h3>
 {% for flight in flights  %}
     
-<li>
-    {% comment %} {% url '<int:flight_id>' %} {% endcomment %}
-     {{flight.id}}. From  {{flight.origin}} to {{flight.destination}} 
-    
-</li>
+    <li>
+        <a href="{% url 'get_details' flight.id %}">
+            {{flight.id}}. From  {{flight.origin}} to {{flight.destination}} 
+        </a>
+    </li>
 
 {% endfor %}
 
