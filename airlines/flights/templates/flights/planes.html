@@ -11,5 +11,18 @@
     <li>Duration: {{flight.duration}}</li>
 </ul>
 
+<h3>Passangers: </h3>
+
+    {% for passanger in passangers %}
+        <ul>
+            <li>{{passanger.first}} {{passanger.last}}</li>
+        </ul>
+        {%empty%}
+        <li>None</li>
+    {% endfor %}
+    {% comment %} <li>{{passanger.first}} {{passanger.last}}</li> {% endcomment %}
+
+
+
 
 {% endblock %}
