@@ -4,7 +4,11 @@
     <h3>Flight details</h3>
 {% for flight in flights  %}
     
-<li> {{flight.id}}. From  {{flight.origin}} to {{flight.destination}} </li>
+<li>
+    {% comment %} {% url '<int:flight_id>' %} {% endcomment %}
+     {{flight.id}}. From  {{flight.origin}} to {{flight.destination}} 
+    
+</li>
 
 {% endfor %}
 
