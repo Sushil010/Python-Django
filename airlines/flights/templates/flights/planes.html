@@ -20,7 +20,18 @@
         {%empty%}
         <li>None</li>
     {% endfor %}
-    {% comment %} <li>{{passanger.first}} {{passanger.last}}</li> {% endcomment %}
+
+    <form action="{% url "book_flight" flight.id %}">
+        {% csrf_token %}
+        <select name="passanger" id="">
+            {% for passanger in non_passanger  %}
+                <option value="{passanger.id}">{{passanger}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit">
+    </form>
+    
+
 
 
     <a href="{% url "flight" %}">Back to lists</a>
