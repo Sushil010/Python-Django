@@ -25,7 +25,7 @@
         {% csrf_token %}
         <select name="passanger" id="">
             {% for passanger in non_passanger  %}
-                <option value="{passanger.id}">{{passanger}}</option>
+                <option value="{{passanger.id}}">{{passanger}}</option>
             {% endfor %}
         </select>
         <input type="submit">
