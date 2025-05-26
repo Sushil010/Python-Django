@@ -21,7 +21,7 @@
         <li>None</li>
     {% endfor %}
 
-    <form action="{% url "book_flight" flight.id %}">
+    <form action="{% url "book_flight" flight.id %}" method="post">
         {% csrf_token %}
         <select name="passanger" id="">
             {% for passanger in non_passanger  %}
