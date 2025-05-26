@@ -26,4 +26,7 @@ def book_flight(request,flight_id):
         passanger=Passangers.objects.get(pk=int(request.POST["passanger"]))
         # like adding a new row to the table
         passanger.flights.add(flight)
+
+        # look at the url where you want to return and provide name according to that 
+        # relevant name of the url.
         return HttpResponseRedirect(reverse("get_details",args=(flight.id,)))
