@@ -35,5 +35,7 @@ def login_method(request):
 
 
 def logout_method(request):
-    if request.method=="POST":
-        pass
+    logout(request)
+    return render(request,'users/index.html',{
+        'message': 'Logged Out'
+    })
