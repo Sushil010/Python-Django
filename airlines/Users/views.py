@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
 def main_page(request):
@@ -16,9 +17,19 @@ def main_page(request):
 
 
 def login_method(request):
-    return render(request,'users/index.html')
-    # if request.method=="POST":
-    #     pass
+    # return render(request,'users/index.html')
+    if request.method=="POST":
+        username=request.POST["Username"]
+        password=request.POST["Password"]
+        user=authenticate(request,username=username,password=password)
+        if user is not None:
+            login(user)
+            return HttpResponseRedirect(reverse('index'))
+        else:
+            return render(request,'users/index.html',{
+                'message':'Invalid Credentials'
+            })
+
 
 def logout_method(request):
     if request.method=="POST":
