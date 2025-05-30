@@ -6,6 +6,11 @@ from django.urls import reverse
 def main_page(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('login')) 
+    
+    # this_line--->invokes=urls.py=goes_to_login_name-->that_login_redirects_to
+    # views.login_method_below-->now_that_method_invokes_index.htm_file inside_of
+    # users_folder. 
+
     # return render(request,"users/index.html")
     # return HttpResponse("welecome to the page")
 
