@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse
 from .models import Notes 
 import uuid
@@ -35,13 +35,23 @@ def note_form(request):
 
 
 def view_note(request,note_id):
-    pass
+    note=get_object_or_404(Notes,note_id=note_id)
+    
+
+    now=datetime.datetime.now(datetime.timezone.utc)
+    if (now-note.created_at).total_seconds()>300 or note.viewed==True:
+        return HttpResponse("Note has expired")
+    
+    note.viewed=True
+    note.save()
+    return HttpResponse(f"{note.content}")
     # note=note_Store.get(note_id)
-    # # note={
-    # # "content": "hello world",
-    # # "time_stamp": datetime.datetime(2025, 7, 23, 22, 15),
-    # # "viewed": False
-    # # }
+       
+        # # note={
+        # # "content": "hello world",
+        # # "time_stamp": datetime.datetime(2025, 7, 23, 22, 15),
+        # # "viewed": False
+        # # }
     
     # if not note:
     #     return HttpResponse("Note not found")
