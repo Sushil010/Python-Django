@@ -24,17 +24,22 @@ def note_form(request):
 
 def view_note(request,note_id):
     note=note_Store.get(note_id)
+    # note={
+    # "content": "hello world",
+    # "time_stamp": datetime.datetime(2025, 7, 23, 22, 15),
+    # "viewed": False
+    # }
     
     if not note:
         return HttpResponse("Note not found")
     
     now=datetime.datetime.now()
-    diff=(now-note.time_stamp).total_seconds()
+    diff=(now-note['time_stamp']).total_seconds()
     if note.viewed==True or diff>300:
         return HttpResponse("Note has expired")
         
     note.viewed=True
-    return HttpResponse(f"Note:{note.content}")
+    return HttpResponse(f"Note:{note['content']}")
 
 
 
