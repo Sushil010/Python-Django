@@ -1,0 +1,11 @@
+{% extends 'notes/layout.html' %}
+
+{% block content %}
+<h3>Your Note Link</h3>
+<p>Share this link (it will expire after 1 view or 5 minutes):</p>
+
+<a href="{% url 'view_note' note_id=note_id %}">
+  {{ request.build_absolute_uri }}view/{{ note_id }}/
+</a>
+
+{% endblock %}

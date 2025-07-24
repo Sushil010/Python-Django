@@ -17,7 +17,7 @@ def note_form(request):
             "viewed":False
         }
 
-        # return render(request,)
+        return render(request,"notes/share_url.html",{"note_id":note_id})
 
     return render(request, "notes/form.html")
 
@@ -35,10 +35,10 @@ def view_note(request,note_id):
     
     now=datetime.datetime.now()
     diff=(now-note['time_stamp']).total_seconds()
-    if note.viewed==True or diff>300:
+    if note["viewed"]==True or diff>300:
         return HttpResponse("Note has expired")
         
-    note.viewed=True
+    note["viewed"]=True
     return HttpResponse(f"Note:{note['content']}")
 
 
