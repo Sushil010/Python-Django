@@ -1,0 +1,13 @@
+{% extends 'notes/layout.html' %}
+
+
+{% block content %}
+
+{% for note in notes%}
+
+   <li>{{ note.content }} ({{ note.created_at }})</li>
+  {% empty %}
+    <li>No notes yet.</li>
+{% endfor %}
+
+{% endblock %}

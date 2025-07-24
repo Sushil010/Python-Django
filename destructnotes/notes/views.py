@@ -27,8 +27,10 @@ def note_form(request):
     if request.method=="POST":
         content=request.POST.get("note") ##note is a variable stored in form 
         note=Notes.objects.create(content=content)
+        
+        return redirect('show_notes')
 
-        return render(request,"notes/share_url.html",{"note_id":note.note_id})
+        # return render(request,"notes/share_url.html",{"note_id":note.note_id})
     return render(request,"notes/form.html")
 
 
@@ -67,6 +69,14 @@ def view_note(request,note_id):
 
 
 
+
+def show_notes(request):
+    if request.method=="POST":
+        content=request.POST.get('note')
+        Notes.objects.create(content=content)
+
+        notes=Notes.objects.all().order_by('-created_at')
+        return render(request,"notes/index.html",{"notes":notes})
 
 
 
