@@ -13,13 +13,28 @@ def note_form(request):
 
         note_Store[note_id]={
             "content":content,
-            "time_stamp":time_stamp
+            "time_stamp":time_stamp,
+            "viewed":False
         }
 
         # return render(request,)
 
     return render(request, "notes/form.html")
 
+
+def view_note(request,note_id):
+    note=note_Store.get(note_id)
+    
+    if not note:
+        return HttpResponse("Note not found")
+    
+    now=datetime.datetime.now()
+    diff=(now-note.time_stamp).total_seconds()
+    if note.viewed==True or diff>300:
+        return HttpResponse("Note has expired")
+        
+    note.viewed=True
+    return HttpResponse(f"Note:{note.content}")
 
 
 
