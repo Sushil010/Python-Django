@@ -3,8 +3,34 @@ from django.http import HttpResponse
 
 
 # Create your views here.
-def home(request):
+def note_form(request):
     return render(request, "notes/form.html")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # def about(request):
 # #   return HttpResponse("<h1>Welcome to notes's page: About page</h1>")
