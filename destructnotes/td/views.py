@@ -4,9 +4,9 @@ from .models import Notes
 
 # Create your views here.
 def forms(request):
-    if request.method=="post":
+    if request.method=="POST":
         datas=request.POST.get("tasks")
-        notes=Notes.objects.create(text=datas)
+        todos=Notes.objects.create(text=datas)
 
         return HttpResponse("Submitted Successfully!!")
     return render(request,"td/form.html")
