@@ -11,8 +11,17 @@
     <button type="submit">Add</button>
 </form>
 
-    {% comment %} {% for d in dat %}
-        <h1>{{d}}</h1>
-    {% endfor %} {% endcomment %}
+    {% if dat %}
+        {% for d in dat %}
+            <h3>{{d}}</h3>
+            <a href="{% url "delete_tasks" d.id %}">
+            <button type="submit">
+                Delete
+            </button>
+            </a>
+        {% endfor %}
+    {% else %}
+        <h3>No lists</h3> 
+    {% endif %}
 
 {% endblock %}
