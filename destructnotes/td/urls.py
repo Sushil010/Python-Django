@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.forms,name="forms"),
+    # path('lists/')
 ]

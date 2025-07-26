@@ -6,7 +6,9 @@ from .models import Notes
 def forms(request):
     if request.method=="POST":
         datas=request.POST.get("tasks")
-        todos=Notes.objects.create(text=datas)
+        Notes.objects.create(text=datas)
 
-        return HttpResponse("Submitted Successfully!!")
+        all_data=Notes.objects.all()
+
+        return render(request,'td/task_list.html',{'dat':all_data})
     return render(request,"td/form.html")
