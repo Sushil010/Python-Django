@@ -19,6 +19,12 @@
                 Delete
             </button>
             </a>
+            <a href="{% url "update" d.id %}">
+                <button type="submit">
+                    Edit
+                </button>
+            </a>
+            <hr>
         {% endfor %}
     {% else %}
         <h3>No lists</h3> 

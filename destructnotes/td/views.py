@@ -20,3 +20,6 @@ def delete_tasks(request,ids):
     to_be_deleted_note=get_object_or_404(Notes,id=ids)
     to_be_deleted_note.delete()
     return redirect("forms")
+
+def edit_tasks(request,ids):
+    to_be_updated=get_object_or_404(Notes,id=ids)
