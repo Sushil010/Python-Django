@@ -5,6 +5,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.forms,name="forms"),
-    path('delete/<int:ids>',views.delete_tasks,name='delete_tasks')
+    path('delete/<int:ids>',views.delete_tasks,name='delete_tasks') #this ids variable
+    # should match what we are passing to delete_tasks in views
+    
     # path('lists/')
 ]
