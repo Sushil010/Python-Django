@@ -23,3 +23,13 @@ def delete_tasks(request,ids):
 
 def edit_tasks(request,ids):
     to_be_updated=get_object_or_404(Notes,id=ids)
+
+    if request.method=="post":
+        new_text=request.method.get("edit_text")
+        if new_text.strip():
+            to_be_updated=new_text
+            to_be_updated.save()
+            return redirect("forms")
+    
+    return render(request,"td/edit.html",{'to_update':to_be_updated})
+
