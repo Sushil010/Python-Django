@@ -8,11 +8,19 @@ def forms(request):
         datas=request.POST.get("tasks")
         if datas.strip():
                 Notes.objects.create(text=datas)
+       
 
     all_data=Notes.objects.all()
-
+    total=all_data.count()
+    completed=all_data.filter(completed=True).count()
+    remaining=total-completed
         # return render(request,'td/task_list.html',{'dat':all_data})
-    return render(request,"td/form.html",{'dat':all_data})
+    return render(request,"td/form.html",{
+        'dat':all_data,
+        'completed':completed,
+        'total':total,
+        'remaining':remaining
+        })
     # return render(request,"td/form.html")
 
 

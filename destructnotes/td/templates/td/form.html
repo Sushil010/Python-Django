@@ -11,7 +11,9 @@
     <button type="submit">Add</button>
 </form>
 
+    <h4>{{completed}} of {{total}} completed</h4>
     {% if dat %}
+        
         {% for d in dat %}
             <h3 style="text-decoration: {% if d.completed %}line-through{% endif %}">
 
@@ -34,6 +36,7 @@
             </a>
             <hr>
         {% endfor %}
+        {{count}}
     {% else %}
         <h3>No lists</h3> 
     {% endif %}

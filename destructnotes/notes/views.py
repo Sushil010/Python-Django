@@ -24,9 +24,11 @@ import datetime
 
 
 def note_form(request):
+    
     if request.method=="POST":
         content=request.POST.get("note") ##note is a variable stored in form 
         note=Notes.objects.create(content=content)
+       
         
         return redirect('show_notes')
 
