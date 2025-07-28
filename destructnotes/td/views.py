@@ -38,6 +38,6 @@ def comp_tasks(request,ids):
     notes=get_object_or_404(Notes,id=ids)
 
     if request.method=="POST":
-        notes.completed=not notes.check
+        notes.completed=not notes.completed
         notes.save()
         return redirect("forms")
