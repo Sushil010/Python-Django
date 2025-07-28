@@ -13,13 +13,19 @@
 
     {% if dat %}
         {% for d in dat %}
-            <h3>
-            <input type="checkbox" name="check">{{d}}
+            <h3 style="text-decoration: {% if d.completed %}line-through{% endif %}">
+
+                <form method="post" action={% url "check" d.id %} >
+                    {% csrf_token %}
+                    <input type="checkbox" onchange="this.form.submit()" name="check" {% if d.completed %}checked{% endif %}>
+                        {{d.text}}
+                </form>
+            
             </h3>
             <a href="{% url "delete_tasks" d.id %}">
-            <button type="submit">
-                Delete
-            </button>
+                <button type="submit">
+                    Delete
+                </button>
             </a>
             <a href="{% url "update" d.id %}">
                 <button type="submit">

@@ -34,8 +34,10 @@ def edit_tasks(request,ids):
     return render(request,"td/edit.html",{'to_update':to_be_updated})#3.
 
 
-def comp_tasks(request,idx):
-    notes=get_object_or_404(Notes,id=idx)
+def comp_tasks(request,ids):
+    notes=get_object_or_404(Notes,id=ids)
 
     if request.method=="POST":
-        pass
+        notes.completed=not notes.check
+        notes.save()
+        return redirect("forms")
