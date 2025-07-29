@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('notes/', include('notes.urls')),
     path('todos/',include('td.urls')),
+    path('blog/',include('blog.urls'))
 ]
