@@ -1,6 +1,24 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import blog
 
 # Create your views here.
 def main(request):
-    return HttpResponse("Main page content")
+    return render(request,"blog/homepage.html")
+
+
+def create_post(request):
+    if request.method=="POST":
+        title=request.POST.get("title")
+        content=request.POST.get("content")
+        if title.strip() and content.strip():
+            blog.objects.create(title=title)
+            blog.objects.create(content=content)
+        return render(request,"blog/homepage.html",
+                      {'title':title,
+                        'content':content
+                        })
+
+    # return HttpResponse("Start creating")
+    return render(request,"blog/create.html")
+    # if request.method="POST":

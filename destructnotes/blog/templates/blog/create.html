@@ -1,0 +1,16 @@
+{% extends "blog/layout.html" %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <textarea name="title" cols="20" rows="2" placeholder="Enter Title..."></textarea>
+        <br>
+    <textarea name="content" cols="50" rows="7" placeholder="Enter content..."></textarea>
+    <br>
+    <button action="submit">
+        Submit
+    </button>
+</form>
+
+
+{% endblock %}

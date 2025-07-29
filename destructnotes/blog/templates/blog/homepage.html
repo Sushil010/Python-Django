@@ -1,0 +1,25 @@
+{% extends "blog/layout.html" %}
+
+
+{% block content %}
+
+<a href="{% url "create_post" %}">
+    <button>
+        Create
+    </button>
+</a>
+<button>
+    Delete
+</button>
+
+<br>
+{% if title %}
+  <h2>{{title}}</h2>
+    <h4>{{content}}</h4>
+    
+{% else %}
+    <h3>No-blog posted yet</h3>
+
+{% endif %}
+
+{% endblock %}
