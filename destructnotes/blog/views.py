@@ -20,9 +20,8 @@ def create_post(request):
                     #     'content':content
                     #     }
                     {'vals':vals}
-                        
                         )
 
     # return HttpResponse("Start creating")
-    return render(request,"blog/create.html")
+    return render(request,"blog/homepage.html")
     # if request.method="POST":
