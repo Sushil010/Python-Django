@@ -20,9 +20,11 @@
     <a href="{% url "delete_post" v.id %}">
 
         <button>Delete</button>
-
     </a>
-   
+       <a href="{% url "edit" v.id %}">
+
+        <button>Edit</button>
+    </a>
  {% endfor %}
     
 {% else %}
