@@ -38,8 +38,15 @@ def delete_posts(request,idx):
 
 def edit_posts(request,idx):
     editable=get_object_or_404(blog,id=idx)
-    # if request.method=="POST":
-    #     editable.title=editable.
+    if request.method=="POST":
+        new_text_title=request.POST.get("ed_title")
+        new_text_content=request.POST.get("ed_content")
+
+        editable.title=new_text_title
+        editable.content=new_text_content
+        editable.save()
+
+        return redirect("main")
 
     return render(request,"blog/edit.html",{
         'values':editable
