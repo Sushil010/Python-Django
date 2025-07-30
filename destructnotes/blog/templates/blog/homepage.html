@@ -13,10 +13,16 @@
 <br>
 
 {% if vals %}
+<p>Total posts: {{total_posts}}</p>
  {% for v in vals %}
     <h3>{{v.title}}</h3>
     <p>{{v.content}}</p>
-   <button>Delete</button>
+    <a href="{% url "delete_post" v.id %}">
+
+        <button>Delete</button>
+
+    </a>
+   
  {% endfor %}
     
 {% else %}
