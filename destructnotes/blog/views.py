@@ -14,10 +14,14 @@ def create_post(request):
         if title.strip() and content.strip():
             blog.objects.create(title=title)
             blog.objects.create(content=content)
+        vals=blog.objects.all()
         return render(request,"blog/homepage.html",
-                      {'title':title,
-                        'content':content
-                        })
+                    #   {'title':title,
+                    #     'content':content
+                    #     }
+                    {'vals':vals}
+                        
+                        )
 
     # return HttpResponse("Start creating")
     return render(request,"blog/create.html")
