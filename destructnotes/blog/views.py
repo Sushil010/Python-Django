@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse
 from .models import blog
 from django.contrib import messages
+from .forms import BlogForm
 
 # Create your views here.
 def main(request):
@@ -16,10 +17,13 @@ def main(request):
 
 def create_post(request):
     if request.method=="POST":
-        title=request.POST.get("title")
-        content=request.POST.get("content")
-        if title.strip() and content.strip():
-            blog.objects.create(title=title,content=content)
+        # title=request.POST.get("title")
+        # content=request.POST.get("content")
+        form=BlogForm(request.POST)
+        # if title.strip() and content.strip():
+        #     blog.objects.create(title=title,content=content)
+        if form.is_valid():
+            form.save()
             messages.success(request,"Blog created successfully")
             return redirect("main",
                     #   {'title':title,
@@ -27,11 +31,13 @@ def create_post(request):
                     #     }
                         )
         else:
-            messages.warning(request,"Both fields are required")
+            messages.warning(request,"Correct the errors")
+    else:
+        form=BlogForm()
         
 
     # return HttpResponse("Start creating")
-    return render(request,"blog/create.html")
+    return render(request,"blog/create.html",{"form":form})
     # if request.method="POST":
 
 
