@@ -9,6 +9,14 @@
     
 
     {% block content %}
+        {% comment %} {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li style="color:green;">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %} {% endcomment %}
+
     {% endblock %}
 
 </body>

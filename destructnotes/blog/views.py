@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse
 from .models import blog
+from django.contrib import messages
 
 # Create your views here.
 def main(request):
@@ -19,12 +20,15 @@ def create_post(request):
         content=request.POST.get("content")
         if title.strip() and content.strip():
             blog.objects.create(title=title,content=content)
-        
-        return redirect("main",
+            messages.success(request,"Blog created successfully")
+            return redirect("main",
                     #   {'title':title,
                     #     'content':content
                     #     }
                         )
+        else:
+            messages.warning(request,"Both fields are required")
+        
 
     # return HttpResponse("Start creating")
     return render(request,"blog/create.html")
@@ -34,6 +38,7 @@ def create_post(request):
 def delete_posts(request,idx):
     posts=get_object_or_404(blog,id=idx)
     posts.delete()
+    messages.info(request,"Blog deleted")
     return redirect("main")
 
 def edit_posts(request,idx):

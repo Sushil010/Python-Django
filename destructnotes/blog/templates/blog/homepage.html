@@ -12,7 +12,16 @@
 
 <br>
 
+ {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li style="color:green;">{{ message }}</li>
+            {% endfor %}
+        </ul>
+ {% endif %}
+
 {% if vals %}
+
 <p>Total posts: {{total_posts}}</p>
  {% for v in vals %}
     <h3>{{v.title}}</h3>
