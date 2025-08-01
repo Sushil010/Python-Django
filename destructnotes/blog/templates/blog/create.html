@@ -14,8 +14,8 @@
         <br>
     <textarea name="content" cols="50" rows="7" placeholder="Enter content..."></textarea>
     <br> {% endcomment %}
-    {{form}}
-    <button action="submit">
+    {{form.as_p}}
+    <button type="submit">
         Submit
     </button>
 </form>

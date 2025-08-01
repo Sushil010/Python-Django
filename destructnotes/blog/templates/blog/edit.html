@@ -6,7 +6,7 @@
 
 <form method="post">
     {% csrf_token %}
-    {{form}}
+    {{form.as_p}}
      {% comment %} <textarea name="ed_title" cols="20" rows="2" placeholder="Edit Title">{{values.title}}</textarea>
         <br>
     <textarea name="ed_content" cols="50" rows="7" placeholder="Edit content...">{{values.content}}</textarea> {% endcomment %}
