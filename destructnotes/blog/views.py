@@ -17,9 +17,12 @@ def main(request):
 
 def create_post(request):
     if request.method=="POST":
+        
         # title=request.POST.get("title")
         # content=request.POST.get("content")
         form=BlogForm(request.POST)
+        
+        
         # if title.strip() and content.strip():
         #     blog.objects.create(title=title,content=content)
         if form.is_valid():
@@ -34,8 +37,6 @@ def create_post(request):
             messages.warning(request,"Correct the errors")
     else:
         form=BlogForm()
-        
-
     # return HttpResponse("Start creating")
     return render(request,"blog/create.html",{"form":form})
     # if request.method="POST":
@@ -50,15 +51,27 @@ def delete_posts(request,idx):
 def edit_posts(request,idx):
     editable=get_object_or_404(blog,id=idx)
     if request.method=="POST":
-        new_text_title=request.POST.get("ed_title")
-        new_text_content=request.POST.get("ed_content")
-
-        editable.title=new_text_title
-        editable.content=new_text_content
-        editable.save()
-
-        return redirect("main")
-
-    return render(request,"blog/edit.html",{
-        'values':editable
-        })
+        
+        # new_text_title=request.POST.get("ed_title")
+        # new_text_content=request.POST.get("ed_content")
+        
+        form=BlogForm(request.POST,instance=editable)
+        
+        # editable.title=new_text_title
+        # editable.content=new_text_content
+        # editable.save()
+        # return redirect("main")
+        
+        if form.is_valid():
+            form.save()
+            messages.success("Blog successfully edited")
+            return redirect("main")
+        else:
+            messages.warning(request,"Correct the errors below")
+    else:
+        form=BlogForm(instance=editable)
+       
+    return render(request,"blog/edit.html",{"form":form})
+    # return render(request,"blog/edit.html",{
+    #     'values':editable
+    #     })

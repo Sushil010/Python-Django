@@ -10,10 +10,11 @@
  {% endif %}
 <form method="post">
     {% csrf_token %}
-    <textarea name="title" cols="20" rows="2" placeholder="Enter Title..."></textarea>
+    {% comment %} <textarea name="title" cols="20" rows="2" placeholder="Enter Title..."></textarea>
         <br>
     <textarea name="content" cols="50" rows="7" placeholder="Enter content..."></textarea>
-    <br>
+    <br> {% endcomment %}
+    {{form}}
     <button action="submit">
         Submit
     </button>
