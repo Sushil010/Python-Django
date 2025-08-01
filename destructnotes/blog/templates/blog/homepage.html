@@ -11,8 +11,14 @@
 
 
 <br>
+<form action="." method="get">
+    <input type="text" name="q" placeholder="Search blogs..." value="{{ request.GET.q }}">
+    <button type="submit">Search</button>
+</form>
 
- {% if messages %}
+
+
+{% if messages %}
         <ul>
             {% for message in messages %}
                 <li style="color:green;">{{ message }}</li>
@@ -20,20 +26,35 @@
         </ul>
  {% endif %}
 
+{% comment %} 
+{% for post in blogs %}
+
+<h2>{{post.title}}</h2>
+<p>{{post.content}}</p>
+
+{%empty%}
+<p>No blog posts found</p>
+{% endfor %}
+
+
 {% if vals %}
 
 <p>Total posts: {{total_posts}}</p>
  {% for v in vals %}
     <h3>{{v.title}}</h3>
     <p>{{v.content}}</p>
+    
     <a href="{% url "delete_post" v.id %}">
 
         <button>Delete</button>
     </a>
-       <a href="{% url "edit" v.id %}">
+       
+    <a href="{% url "edit" v.id %}">
 
         <button>Edit</button>
+    
     </a>
+
  {% endfor %}
     
 {% else %}
@@ -41,4 +62,34 @@
 
 {% endif %}
 
+{% endblock %} {% endcomment %}
+
+
+{% if request.GET.q %}
+    {% if blogs %}
+        <p>Total posts: {{ total_posts }}</p>
+        {% for post in blogs %}
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+
+            <a href="{% url 'delete_post' post.id %}"><button>Delete</button></a>
+            <a href="{% url 'edit' post.id %}"><button>Edit</button></a>
+        {% endfor %}
+    {% else %}
+        <p>No blog posts found</p>
+    {% endif %}
+{% else %}
+    {% if vals %}
+        <p>Total posts: {{ total_posts }}</p>
+        {% for v in vals %}
+            <h2>{{ v.title }}</h2>
+            <p>{{ v.content }}</p>
+
+            <a href="{% url 'delete_post' v.id %}"><button>Delete</button></a>
+            <a href="{% url 'edit' v.id %}"><button>Edit</button></a>
+        {% endfor %}
+    {% else %}
+        <h3>No blogs posted yet</h3>
+    {% endif %}
+{% endif %}
 {% endblock %}

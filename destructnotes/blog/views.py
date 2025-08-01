@@ -5,14 +5,33 @@ from django.contrib import messages
 from .forms import BlogForm
 
 # Create your views here.
-def main(request):
-    vals=blog.objects.all()
-    total_posts=vals.count()
 
-    return render(request,"blog/homepage.html",{
-        "vals":vals,
-        "total_posts":total_posts
-        })
+def main(request):
+    query = request.GET.get('q')
+    
+    if query:
+        vals = blog.objects.filter(title__icontains=query) | blog.objects.filter(content__icontains=query)
+        blogs = vals  # for the upper loop
+    else:
+        vals = blog.objects.all()
+        blogs = []  # to show 'no blog found' only when searching
+
+    total_posts = vals.count()
+
+    return render(request, "blog/homepage.html", {
+        "vals": vals,
+        "total_posts": total_posts,
+        "blogs": blogs
+    })
+
+# def main(request):
+#     vals=blog.objects.all()
+#     total_posts=vals.count()
+
+#     return render(request,"blog/homepage.html",{
+#         "vals":vals,
+#         "total_posts":total_posts
+#         })
 
 
 def create_post(request):
@@ -75,3 +94,14 @@ def edit_posts(request,idx):
     # return render(request,"blog/edit.html",{
     #     'values':editable
     #     })
+
+
+def search(request):
+    query=request.GET.get('q')
+    if query:
+        blogs = blog.objects.filter(title__icontains=query) | blog.objects.filter(content__icontains=query)
+
+    else:
+        blogs=blog.objects.all()
+    
+    return render(request,"blog/homepage.html",{"blog":blogs})
